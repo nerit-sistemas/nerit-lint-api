@@ -6,8 +6,9 @@ module.exports = {
         tsconfigRootDir: './',
     },
     parser: '@typescript-eslint/parser',
-    plugins : [
-        '@typescript-eslint'
+    plugins: [
+        '@typescript-eslint',
+        'eslint-plugin-import-helpers'
     ],
     extends: [
         'plugin:@typescript-eslint/eslint-recommended',
@@ -18,9 +19,9 @@ module.exports = {
 
         '@typescript-eslint/naming-convention': [
             'error',
-        
+
             // propriedade
-        
+
             /**
              * Propriedades PUBLIC com modificador OMITIDO:
              *
@@ -29,14 +30,14 @@ module.exports = {
              * ?? :array
              * ?? :boolean
              */
-        
+
             {   // ?? :??
                 selector: 'property',
                 format: ['camelCase'],
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // ?? :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -66,7 +67,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             /**
              * Propriedades PUBLIC READONLY com modificador OMITIDO:
              *
@@ -75,7 +76,7 @@ module.exports = {
              * ?? readonly :array
              * ?? readonly :boolean
              */
-        
+
             {   // ?? readonly :??
                 selector: 'property',
                 modifiers: ['readonly'],
@@ -83,7 +84,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // ?? readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -116,7 +117,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC static com modificador OMITIDO:
              *
@@ -125,7 +126,7 @@ module.exports = {
              * ?? static :array
              * ?? static :boolean
              */
-        
+
             {   // ?? static :??
                 selector: 'property',
                 modifiers: ['static'],
@@ -133,7 +134,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // ?? static :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -166,7 +167,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC static READONLY com modificador OMITIDO:
              *
@@ -175,7 +176,7 @@ module.exports = {
              * ?? static readonly :array
              * ?? static readonly :boolean
              */
-        
+
             {   // ?? static readonly :??
                 selector: 'property',
                 modifiers: ['static', 'readonly'],
@@ -183,7 +184,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // ?? static readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -216,7 +217,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC com modificador EXPLICITO:
              *
@@ -225,7 +226,7 @@ module.exports = {
              * public :array
              * public :boolean
              */
-        
+
             {   // public :??
                 selector: 'property',
                 modifiers: ['public'],
@@ -233,7 +234,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // public :(string|number|function)
                 selector: 'property',
                 modifiers: ['public'],
@@ -266,7 +267,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC READONLY com modificador EXPLICITO:
              *
@@ -275,7 +276,7 @@ module.exports = {
              * public readonly :array
              * public readonly :boolean
              */
-        
+
             {   // public readonly :??
                 selector: 'property',
                 modifiers: ['public', 'readonly'],
@@ -283,7 +284,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // public readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -316,7 +317,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC static com modificador EXPLICITO:
              *
@@ -325,7 +326,7 @@ module.exports = {
              * public static :array
              * public static :boolean
              */
-        
+
             {   // public static :??
                 selector: 'property',
                 modifiers: ['public', 'static'],
@@ -333,7 +334,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // public static :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -366,7 +367,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PUBLIC static READONLY com modificador EXPLICITO:
              *
@@ -375,7 +376,7 @@ module.exports = {
              * public static readonly :array
              * public static readonly :boolean
              */
-        
+
             {   // public static readonly :??
                 selector: 'property',
                 modifiers: ['public', 'static', 'readonly'],
@@ -383,7 +384,7 @@ module.exports = {
                 leadingUnderscore: 'forbid',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // public static readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -416,7 +417,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PROTECTED:
              *
@@ -425,7 +426,7 @@ module.exports = {
              * protected :array
              * protected :boolean
              */
-        
+
             {   // protected :??
                 selector: 'property',
                 modifiers: ['protected'],
@@ -433,7 +434,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // protected :(string|number|function)
                 selector: 'property',
                 modifiers: ['protected'],
@@ -466,7 +467,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force)"
                 }
             },
-        
+
             /**
              * Propriedades PROTECTED readonly:
              *
@@ -475,7 +476,7 @@ module.exports = {
              * protected readonly :array
              * protected readonly :boolean
              */
-        
+
             {   // protected readonly :??
                 selector: 'property',
                 modifiers: ['protected', 'readonly'],
@@ -483,7 +484,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // protected readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -516,7 +517,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PROTECTED static:
              *
@@ -525,7 +526,7 @@ module.exports = {
              * protected static :array
              * protected static :boolean
              */
-        
+
             {   // protected static :??
                 selector: 'property',
                 modifiers: ['protected', 'static'],
@@ -533,7 +534,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // protected static :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -566,7 +567,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PROTECTED static READONLY:
              *
@@ -575,7 +576,7 @@ module.exports = {
              * protected static readonly :array
              * protected static readonly :boolean
              */
-        
+
             {   // protected static readonly :??
                 selector: 'property',
                 modifiers: ['protected', 'static', 'readonly'],
@@ -583,7 +584,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // protected static readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -616,7 +617,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PRIVATE:
              *
@@ -625,7 +626,7 @@ module.exports = {
              * private :array
              * private :boolean
              */
-        
+
             {   // private :??
                 selector: 'property',
                 modifiers: ['private'],
@@ -633,7 +634,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // private :(string|number|function)
                 selector: 'property',
                 modifiers: ['private'],
@@ -666,7 +667,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force)"
                 }
             },
-        
+
             /**
              * Propriedades PRIVATE readonly:
              *
@@ -675,7 +676,7 @@ module.exports = {
              * private readonly :array
              * private readonly :boolean
              */
-        
+
             {   // private readonly :??
                 selector: 'property',
                 modifiers: ['private', 'readonly'],
@@ -683,7 +684,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // private readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -716,7 +717,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PRIVATE static:
              *
@@ -725,7 +726,7 @@ module.exports = {
              * private static :array
              * private static :boolean
              */
-        
+
             {   // private static :??
                 selector: 'property',
                 modifiers: ['private', 'static'],
@@ -733,7 +734,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // private static :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -766,7 +767,7 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
             /**
              * Propriedades PRIVATE static READONLY:
              *
@@ -775,7 +776,7 @@ module.exports = {
              * private static readonly :array
              * private static readonly :boolean
              */
-        
+
             {   // private static readonly :??
                 selector: 'property',
                 modifiers: ['private', 'static', 'readonly'],
@@ -783,7 +784,7 @@ module.exports = {
                 leadingUnderscore: 'require',
                 trailingUnderscore: 'forbid',
             },
-        
+
             {   // private static readonly :(string|number|function)
                 selector: 'property',
                 types: ['string', 'number', 'function'],
@@ -816,9 +817,9 @@ module.exports = {
                     regex: "^(is|are|should|must|can|have|has|did|dont|will|enable|require|force|IS|ENABLE|REQUIRE|FORCE|DONT)"
                 }
             },
-        
+
         ],
-        
+
         '@typescript-eslint/ban-types': ['error', {
             extendDefaults: false,
             types: {
@@ -856,7 +857,7 @@ module.exports = {
                 },
             }
         }],
-        
+
         //não permitir variáveis ​​não utilizadas
         '@typescript-eslint/no-unused-vars': [
             'error',
@@ -869,15 +870,15 @@ module.exports = {
 
         // TODO: Reabilitar essas regras & fazer elas funcinarem direito        
         '@getify/proper-arrows/where': 'off',
-        
+
         // TODO: Artualizar valor no pacote com configuracoes padrao da empresa
         //'@typescript-eslint/unbound-method': ['warn', { ignoreStatic: true }],
-        '@getify/proper-arrows/where': 'off',        
+        '@getify/proper-arrows/where': 'off',
 
         //não permitir espaços mistos e tabulações para recuo
-        'no-mixed-spaces-and-tabs':'off',
+        'no-mixed-spaces-and-tabs': 'off',
 
-        'unicorn/no-fn-reference-in-iterator': 'off' ,
+        'unicorn/no-fn-reference-in-iterator': 'off',
 
         //exigir ou não permitir ponto e vírgula em vez de ASI
         'semi': ['error', 'never'],
@@ -886,7 +887,7 @@ module.exports = {
         'prefer-const': 'error',
 
         //não permitir importações de módulos duplicados
-        'no-duplicate-imports':'error', 
+        'no-duplicate-imports': 'error',
 
         // Organiza os imports em grupos para facilitar leitura.
         'import-helpers/order-imports': [
@@ -923,14 +924,14 @@ module.exports = {
         'eqeqeq': ['error', 'always'],
 
         // Permite apenas console info 
-        'no-console': ['warn', {'allow': ['info']}],
+        'no-console': ['warn', { 'allow': ['info'] }],
 
         // Nao permite usar variavel Any
         '@typescript-eslint/no-explicit-any': 'error',
 
         // Nao permite espacos seguidos.
         'no-trailing-spaces': ['error', { 'ignoreComments': true }],
-        
+
         //Não permite returnantes else
         'no-else-return': 'error',
 
@@ -939,7 +940,7 @@ module.exports = {
 
         //impor um estilo específico para comentários de várias linhas
         'multiline-comment-style': ['error', 'starred-block'],
-    
+
         //Impõe um recuo consistente
         'indent': 'error'
     }
