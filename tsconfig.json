@@ -14,7 +14,7 @@
       "strict": true,
       "sourceMap": true,
       "outDir": "./dist",
-      "baseUrl": "./src",
+      "baseUrl": "../src",
       "forceConsistentCasingInFileNames": true,
       "noImplicitReturns": false,
       "incremental": true,
