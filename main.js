@@ -1,8 +1,7 @@
 module.exports = {
-
     root: true,
     parserOptions: {
-        project: './tsconfig.eslint.json',
+        project: '../../tsconfig.json',
         tsconfigRootDir: __dirname,
     },
     parser: '@typescript-eslint/parser',
@@ -944,4 +943,4 @@ module.exports = {
         //Impõe um recuo consistente
         'indent': 'error'
     }
-};
+}
