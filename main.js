@@ -888,6 +888,9 @@ module.exports = {
         //não permitir importações de módulos duplicados
         'no-duplicate-imports': 'error',
 
+
+        /**
+        // Regra desabilitada pois atrapalha.
         // Organiza os imports em grupos para facilitar leitura.
         'import-helpers/order-imports': [
             'error',
@@ -902,6 +905,7 @@ module.exports = {
                 'alphabetize': { 'order': 'asc', 'ignoreCase': true }
             }
         ],
+        */
 
         //obriga o uso de aspas simples
         'quotes': [
